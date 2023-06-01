@@ -48,7 +48,94 @@ function Face() {
    *    bottom_lip, top_lip, nose_tip, nose_bridge, 
    */  
   this.draw = function(positions) {
-    console.log()
+
+
+    //face shape base
+
+    fill(225)
+    beginShape()    
+    vertex(positions.chin[0][0], positions.chin[0][1])
+    vertex(positions.chin[1][0], positions.chin[1][1])
+    vertex(positions.chin[2][0], positions.chin[2][1])
+    vertex(positions.chin[3][0], positions.chin[3][1])
+    vertex(positions.chin[4][0], positions.chin[4][1])
+    vertex(positions.chin[5][0], positions.chin[5][1])
+    vertex(positions.chin[6][0], positions.chin[6][1])
+    vertex(positions.chin[7][0], positions.chin[7][1])
+    vertex(positions.chin[8][0], positions.chin[8][1])
+    vertex(positions.chin[9][0], positions.chin[9][1])
+    vertex(positions.chin[10][0], positions.chin[10][1])
+    vertex(positions.chin[11][0], positions.chin[11][1])
+    vertex(positions.chin[12][0], positions.chin[12][1])
+    vertex(positions.chin[13][0], positions.chin[13][1])
+    vertex(positions.chin[14][0], positions.chin[14][1])
+    vertex(positions.chin[15][0], positions.chin[15][1])
+    vertex(positions.chin[16][0], positions.chin[16][1])
+    vertex(positions.right_eyebrow[4][0], positions.right_eyebrow[4][1] - 0.2)
+    vertex(positions.right_eyebrow[3][0], positions.right_eyebrow[3][1] - 0.2)
+   
+    vertex(positions.right_eyebrow[1][0], positions.right_eyebrow[1][1] - 0.2)
+    vertex(positions.right_eyebrow[0][0] - 0.2, positions.right_eyebrow[0][1] - 0.2)
+    vertex(positions.left_eyebrow[4][0] + 0.2, positions.left_eyebrow[4][1] - 0.2)
+    vertex(positions.left_eyebrow[3][0], positions.left_eyebrow[3][1] - 0.2)
+  
+    vertex(positions.left_eyebrow[1][0], positions.left_eyebrow[1][1] - 0.2)
+    vertex(positions.left_eyebrow[0][0], positions.left_eyebrow[0][1] - 0.2)
+    endShape(CLOSE)
+
+///////////////////////////   NOSE   //////////////////////////////////////////////////////
+fill(180)
+noStroke()
+beginShape()    
+    vertex(positions.nose_tip[2][0], positions.nose_tip[2][1])
+    vertex(positions.nose_tip[3][0], positions.nose_tip[3][1])
+    vertex(positions.nose_tip[4][0]+0.2, positions.nose_tip[4][1]-0.1)
+    vertex(positions.nose_bridge[0][0]+0.3, positions.nose_bridge[0][1])
+    vertex(positions.nose_bridge[0][0]+0.1, positions.nose_bridge[0][1])
+    vertex(positions.nose_bridge[1][0]+0.2, positions.nose_bridge[1][1])
+    vertex(positions.nose_bridge[2][0]+0.3, positions.nose_bridge[2][1])
+    vertex(positions.nose_bridge[3][0], positions.nose_bridge[3][1])
+  
+    endShape(CLOSE)
+
+
+
+
+
+///////////////////////////   EYES   /////////////////////////////////////////////////////
+    let left_eye_pos = segment_average(positions.left_eye);
+    let right_eye_pos = segment_average(positions.right_eye);
+    this.slit_height = positions.right_eye[0][1]
+    this.slit_bottom = positions.right_eye[0][1]
+    this.eyeMiddleTop = segment_average([positions.left_eye[1], positions.left_eye[2]])
+    this.eyeMiddleDown = segment_average([positions.left_eye[4], positions.left_eye[5]])
+
+    this.eyeHeight = segment_average([positions.left_eye[4], positions.left_eye[2]])
+
+    
+    //  console.log(this.slit_height);
+
+
+    // eyes
+    noStroke();
+    let curEyeShift = 0.04 * this.eye_shift;
+
+      fill(10);
+      ellipse(left_eye_pos[0], left_eye_pos[1], 0.5, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //eyes
+      ellipse(right_eye_pos[0], right_eye_pos[1], 0.5, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);
+      fill(225);
+
+
+      ellipse(left_eye_pos[0], left_eye_pos[1], this.pupilsize, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //left pupil
+
+      ellipse(right_eye_pos[0], right_eye_pos[1], this.pupilsize, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);// cat eyes
+
+
+
+
+    
+
+  /*   console.log()
     // head
     ellipseMode(CENTER);
     stroke(stroke_color);
@@ -112,7 +199,7 @@ function Face() {
     }
    // fill(0)
    //ellipse(0,0, 0.5,0.5) center point
-   //rect(-2,-2,4.5,4) sizing debug 
+   //rect(-2,-2,4.5,4) sizing debug  */
   }
 
   // example of a function *inside* the face object.
