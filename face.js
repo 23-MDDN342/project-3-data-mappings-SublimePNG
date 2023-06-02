@@ -54,47 +54,46 @@ function Face() {
 
     fill(225)
     beginShape()    
-    vertex(positions.chin[0][0], positions.chin[0][1])
-    vertex(positions.chin[1][0], positions.chin[1][1])
-    vertex(positions.chin[2][0], positions.chin[2][1])
-    vertex(positions.chin[3][0], positions.chin[3][1])
-    vertex(positions.chin[4][0], positions.chin[4][1])
-    vertex(positions.chin[5][0], positions.chin[5][1])
-    vertex(positions.chin[6][0], positions.chin[6][1])
-    vertex(positions.chin[7][0], positions.chin[7][1])
-    vertex(positions.chin[8][0], positions.chin[8][1])
-    vertex(positions.chin[9][0], positions.chin[9][1])
-    vertex(positions.chin[10][0], positions.chin[10][1])
-    vertex(positions.chin[11][0], positions.chin[11][1])
-    vertex(positions.chin[12][0], positions.chin[12][1])
-    vertex(positions.chin[13][0], positions.chin[13][1])
-    vertex(positions.chin[14][0], positions.chin[14][1])
-    vertex(positions.chin[15][0], positions.chin[15][1])
-    vertex(positions.chin[16][0], positions.chin[16][1])
-    vertex(positions.right_eyebrow[4][0], positions.right_eyebrow[4][1] - 0.2)
-    vertex(positions.right_eyebrow[3][0], positions.right_eyebrow[3][1] - 0.2)
-   
-    vertex(positions.right_eyebrow[1][0], positions.right_eyebrow[1][1] - 0.2)
-    vertex(positions.right_eyebrow[0][0] - 0.2, positions.right_eyebrow[0][1] - 0.2)
-    vertex(positions.left_eyebrow[4][0] + 0.2, positions.left_eyebrow[4][1] - 0.2)
-    vertex(positions.left_eyebrow[3][0], positions.left_eyebrow[3][1] - 0.2)
-  
-    vertex(positions.left_eyebrow[1][0], positions.left_eyebrow[1][1] - 0.2)
-    vertex(positions.left_eyebrow[0][0], positions.left_eyebrow[0][1] - 0.2)
+    curveVertex(positions.chin[0][0]*1.1, positions.chin[0][1])
+    curveVertex(positions.chin[1][0]*1.1, positions.chin[1][1])
+    curveVertex(positions.chin[2][0]*1.1, positions.chin[2][1])
+    curveVertex(positions.chin[3][0]*1.1, positions.chin[3][1])
+    curveVertex(positions.chin[4][0]*1.1, positions.chin[4][1])
+    curveVertex(positions.chin[5][0]*1.1, positions.chin[5][1])
+    curveVertex(positions.chin[6][0]*1.1, positions.chin[6][1])
+    curveVertex(positions.chin[7][0]*1.1, positions.chin[7][1])
+    curveVertex(positions.chin[8][0]*1.1, positions.chin[8][1])
+    curveVertex(positions.chin[9][0]*1.1, positions.chin[9][1])
+    curveVertex(positions.chin[10][0]*1.1, positions.chin[10][1])
+    curveVertex(positions.chin[11][0]*1.1, positions.chin[11][1])
+    curveVertex(positions.chin[12][0]*1.1, positions.chin[12][1])
+    curveVertex(positions.chin[13][0]*1.1, positions.chin[13][1])
+    curveVertex(positions.chin[14][0]*1.1, positions.chin[14][1])
+    curveVertex(positions.chin[15][0]*1.1, positions.chin[15][1])
+    curveVertex(positions.chin[16][0]*1.1, positions.chin[16][1])
+    curveVertex(positions.right_eyebrow[4][0]*1.1, positions.right_eyebrow[4][1])
+    curveVertex(positions.right_eyebrow[3][0]*1.1, positions.right_eyebrow[3][1])
+    curveVertex(positions.right_eyebrow[1][0]*1.1, positions.right_eyebrow[1][1])
+    curveVertex(positions.right_eyebrow[0][0]*1.1, positions.right_eyebrow[0][1])
+    curveVertex(positions.left_eyebrow[4][0]*1.1, positions.left_eyebrow[4][1])
+    curveVertex(positions.left_eyebrow[3][0]*1.1, positions.left_eyebrow[3][1])
+    curveVertex(positions.left_eyebrow[1][0]*1.1, positions.left_eyebrow[1][1])
+    curveVertex(positions.left_eyebrow[0][0]*1.1, positions.left_eyebrow[0][1])
     endShape(CLOSE)
 
 ///////////////////////////   NOSE   //////////////////////////////////////////////////////
 fill(180)
 noStroke()
+//nose right
 beginShape()    
-    vertex(positions.nose_tip[2][0], positions.nose_tip[2][1])
-    vertex(positions.nose_tip[3][0], positions.nose_tip[3][1])
-    vertex(positions.nose_tip[4][0]+0.2, positions.nose_tip[4][1]-0.1)
-    vertex(positions.nose_bridge[0][0]+0.3, positions.nose_bridge[0][1])
-    vertex(positions.nose_bridge[0][0]+0.1, positions.nose_bridge[0][1])
-    vertex(positions.nose_bridge[1][0]+0.2, positions.nose_bridge[1][1])
-    vertex(positions.nose_bridge[2][0]+0.3, positions.nose_bridge[2][1])
-    vertex(positions.nose_bridge[3][0], positions.nose_bridge[3][1])
+    curveVertex(positions.nose_tip[2][0], positions.nose_tip[2][1])
+    curveVertex(positions.nose_tip[3][0], positions.nose_tip[3][1])
+    curveVertex(positions.nose_tip[4][0]+0.2, positions.nose_tip[4][1]-0.1)
+    curveVertex(positions.nose_bridge[1][0]+0.4, positions.nose_bridge[1][1])
+    curveVertex(positions.nose_bridge[1][0]+0.2, positions.nose_bridge[1][1])
+   
+    curveVertex(positions.nose_bridge[2][0]+0.3, positions.nose_bridge[2][1])
+    curveVertex(positions.nose_bridge[3][0], positions.nose_bridge[3][1])
   
     endShape(CLOSE)
 
@@ -103,32 +102,195 @@ beginShape()
 
 
 ///////////////////////////   EYES   /////////////////////////////////////////////////////
-    let left_eye_pos = segment_average(positions.left_eye);
-    let right_eye_pos = segment_average(positions.right_eye);
-    this.slit_height = positions.right_eye[0][1]
-    this.slit_bottom = positions.right_eye[0][1]
-    this.eyeMiddleTop = segment_average([positions.left_eye[1], positions.left_eye[2]])
-    this.eyeMiddleDown = segment_average([positions.left_eye[4], positions.left_eye[5]])
 
-    this.eyeHeight = segment_average([positions.left_eye[4], positions.left_eye[2]])
+let left_eye_pos = segment_average(positions.left_eye);
+let right_eye_pos = segment_average(positions.right_eye);
+this.slit_height = positions.right_eye[0][1]
+this.slit_bottom = positions.right_eye[0][1]
+this.eyeMiddleTop = segment_average([positions.left_eye[1], positions.left_eye[2]])
+this.eyeMiddleDown = segment_average([positions.left_eye[4], positions.left_eye[5]])
+this.eyeHeight = segment_average([positions.left_eye[4], positions.left_eye[2]])
 
+
+fill(2)
+strokeWeight(0.6)
+stroke(2)
+/* beginShape()  
+    curveVertex(positions.left_eye[0][0], positions.left_eye[0][1])
+    curveVertex(positions.left_eye[1][0], positions.left_eye[1][1])
+    curveVertex(positions.left_eye[2][0], positions.left_eye[2][1])
+    curveVertex(positions.left_eye[3][0], positions.left_eye[3][1])
+    curveVertex(positions.left_eye[4][0], positions.left_eye[4][1])
+    curveVertex(positions.left_eye[5][0], positions.left_eye[5][1])
+  endShape(CLOSE)
+
+  beginShape()   
+   
+    curveVertex(positions.right_eye[3][0], positions.right_eye[3][1]);
+    curveVertex(positions.right_eye[4][0], positions.right_eye[4][1]);
+    curveVertex(positions.right_eye[5][0], positions.right_eye[5][1]);  
+    curveVertex(positions.right_eye[0][0], positions.right_eye[0][1]);
+    curveVertex(positions.right_eye[1][0], positions.right_eye[1][1]);
+    curveVertex(positions.right_eye[2][0], positions.right_eye[2][1]); 
+  endShape(CLOSE) */
+
+
+// lashes //
+noStroke()
+fill(10)
+ellipse(right_eye_pos[0]*1.1,right_eye_pos[1]+0.15,(positions.right_eye[3][0]-positions.right_eye[0][0])*1.9,(positions.right_eye[4][1]-positions.right_eye[2][1])*4.2)
+ellipse(left_eye_pos[0]*1.1,left_eye_pos[1]+0.15,(positions.left_eye[0][0]-positions.left_eye[3][0])*1.9,(positions.left_eye[5][1]-positions.left_eye[1][1])*4.2)
+
+beginShape()
+ vertex(positions.right_eye[2][0],positions.right_eye[2][1])
+ vertex(positions.right_eye[3][0]*1.5,positions.right_eye[3][1]+0.3)
+ vertex(positions.right_eye[5][0]*1.5,positions.right_eye[5][1]+0.4)
+endShape(CLOSE)
+
+beginShape()
+ vertex(positions.left_eye[1][0],positions.left_eye[1][1])
+ vertex(positions.left_eye[0][0]*1.5,positions.left_eye[0][1]+0.3)
+ vertex(positions.left_eye[4][0]*1.5,positions.left_eye[4][1]+0.4)
+endShape(CLOSE)
+
+ // sclera //
+fill(50)
+ellipse(right_eye_pos[0]*1.1,right_eye_pos[1]+0.2,(positions.right_eye[3][0]-positions.right_eye[0][0])*1.8,(positions.right_eye[4][1]-positions.right_eye[2][1])*4)
+ellipse(left_eye_pos[0]*1.1,left_eye_pos[1]+0.2,(positions.left_eye[0][0]-positions.left_eye[3][0])*1.8,(positions.left_eye[5][1]-positions.left_eye[1][1])*4)
+
+
+
+/* beginShape()  
+    curveVertex(positions.left_eye[0][0], positions.left_eye[0][1])
+    vertex(positions.left_eye[1][0], positions.left_eye[1][1])
+    vertex(positions.left_eye[2][0], positions.left_eye[2][1])
+    vertex(positions.left_eye[3][0], positions.left_eye[3][1])
+    vertex(positions.left_eye[4][0], positions.left_eye[4][1])
+    vertex(positions.left_eye[5][0], positions.left_eye[5][1])
+  endShape(CLOSE)
+
+  beginShape()   
+   
+    curveVertex(positions.right_eye[3][0], positions.right_eye[3][1]);
+    vertex(positions.right_eye[3][0], positions.right_eye[3][1]);
+    vertex(positions.right_eye[4][0], positions.right_eye[4][1]);
+    vertex(positions.right_eye[5][0], positions.right_eye[5][1]);  
+    vertex(positions.right_eye[0][0], positions.right_eye[0][1]);
+    vertex(positions.right_eye[1][0], positions.right_eye[1][1]);
+    vertex(positions.right_eye[2][0], positions.right_eye[2][1]); 
+  endShape(CLOSE)
+ */
+
+
+// iris //
+  fill(255)
+    stroke(220)
+    strokeWeight(0.06)
+         ellipse(left_eye_pos[0]*1.1, left_eye_pos[1]+0.1, (positions.left_eye[0][0]-positions.left_eye[3][0])*0.8,(positions.left_eye[0][0]-positions.left_eye[3][0])*0.8);
+      ellipse(right_eye_pos[0]*1.1, right_eye_pos[1]+0.1, (positions.left_eye[0][0]-positions.left_eye[3][0])*0.8,(positions.left_eye[0][0]-positions.left_eye[3][0])*0.8);
     
-    //  console.log(this.slit_height);
+    
+    
+    
+      //  console.log(this.slit_height);
 
 
     // eyes
     noStroke();
     let curEyeShift = 0.04 * this.eye_shift;
 
-      fill(10);
-      ellipse(left_eye_pos[0], left_eye_pos[1], 0.5, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //eyes
-      ellipse(right_eye_pos[0], right_eye_pos[1], 0.5, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);
+
+
+    ///////////////////////////// MOUTH  ////////////////////////////////////
+fill(1)
+    beginShape()
+    //curveVertex(positions.top_lip[0][0]*1.2, positions.top_lip[0][1]);
+    //curveVertex(positions.top_lip[1][0], positions.top_lip[1][1]);
+    //curveVertex(positions.top_lip[2][0], positions.top_lip[2][1]);
+    
+    //curveVertex(positions.top_lip[4][0], positions.top_lip[4][1]);
+    //curveVertex(positions.top_lip[5][0], positions.top_lip[5][1]);
+    //curveVertex(positions.top_lip[6][0]*1.2, positions.top_lip[6][1]); 
+    
+   
+    
+    vertex(positions.top_lip[11][0], positions.top_lip[11][1]);
+    vertex(positions.top_lip[10][0], positions.top_lip[10][1]);
+    vertex(positions.top_lip[9][0], positions.top_lip[9][1]); 
+     vertex(positions.top_lip[8][0], positions.top_lip[8][1]);
+     vertex(positions.top_lip[7][0], positions.top_lip[7][1]);
+    
+   //endShape(CLOSE)
+
+
+    //beginShape()
+   
+    curveVertex(positions.bottom_lip[1][0], positions.bottom_lip[1][1]*1);
+    curveVertex(positions.bottom_lip[2][0], positions.bottom_lip[2][1]);
+    curveVertex(positions.bottom_lip[3][0], positions.bottom_lip[3][1]);  
+    curveVertex(positions.bottom_lip[4][0], positions.bottom_lip[4][1]);
+    curveVertex(positions.bottom_lip[5][0], positions.bottom_lip[5][1]*1);
+   
+    //vertex(positions.bottom_lip[6][0], positions.bottom_lip[6][1]); 
+    //vertex(positions.bottom_lip[7][0], positions.bottom_lip[7][1]);
+  endShape(CLOSE)
+
+  //teeth
+
+
+  fill(255)
+  
+  
+
+
+  //bottom
+  beginShape() 
+    curveVertex(positions.bottom_lip[1][0], positions.bottom_lip[1][1]+0.02);
+    curveVertex(positions.bottom_lip[2][0], positions.bottom_lip[2][1]+0.02);
+    curveVertex(positions.bottom_lip[3][0], positions.bottom_lip[3][1]+0.02);  
+    curveVertex(positions.bottom_lip[4][0], positions.bottom_lip[4][1]+0.02);
+    curveVertex(positions.bottom_lip[5][0], positions.bottom_lip[5][1]+0.02);
+   //curveVertex(positions.top_lip[0][0]*1.2, positions.top_lip[0][1]);
+
+    curveVertex(positions.bottom_lip[5][0], positions.bottom_lip[5][1]-0.05);
+    curveVertex(positions.bottom_lip[4][0], positions.bottom_lip[4][1]-0.1);
+    //curveVertex(positions.bottom_lip[3][0], positions.bottom_lip[3][1]-0.2);  
+    curveVertex(positions.bottom_lip[2][0], positions.bottom_lip[2][1]-0.1);
+    curveVertex(positions.bottom_lip[1][0], positions.bottom_lip[1][1]-0.05);
+    //curveVertex(positions.top_lip[6][0]*1.2, positions.top_lip[6][1]); 
+    endShape(CLOSE)
+
+//top
+beginShape()
+    curveVertex(positions.top_lip[11][0]*0.9, positions.top_lip[11][1]+0.15);
+   
+    curveVertex(positions.top_lip[10][0], positions.top_lip[10][1]+0.2);
+    curveVertex(positions.top_lip[9][0], positions.top_lip[9][1]+0.2); 
+    curveVertex(positions.top_lip[8][0], positions.top_lip[8][1]+0.2);
+    
+    curveVertex(positions.top_lip[7][0]*0.9, positions.top_lip[7][1]+0.15);
+
+    curveVertex(positions.top_lip[7][0], positions.top_lip[7][1]-0.02);
+    curveVertex(positions.top_lip[8][0], positions.top_lip[8][1]-0.02);
+    curveVertex(positions.top_lip[9][0], positions.top_lip[9][1]-0.02); 
+    curveVertex(positions.top_lip[10][0], positions.top_lip[10][1]-0.02);
+    curveVertex(positions.top_lip[11][0], positions.top_lip[11][1]-0.02);
+endShape(CLOSE)
+
+
+
+
+
+
+      fill(255);
+     // ellipse(left_eye_pos[0], left_eye_pos[1], 0.5, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //eyes
+      //ellipse(right_eye_pos[0], right_eye_pos[1], 0.5, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);
       fill(225);
 
+fill(200)
+      //ellipse(left_eye_pos[0], left_eye_pos[1], this.pupilsize, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //left pupil
 
-      ellipse(left_eye_pos[0], left_eye_pos[1], this.pupilsize, (positions.left_eye[2][1] - positions.left_eye[4][1]) * 7 + 0.9); //left pupil
-
-      ellipse(right_eye_pos[0], right_eye_pos[1], this.pupilsize, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);// cat eyes
+      //ellipse(right_eye_pos[0], right_eye_pos[1], this.pupilsize, (positions.right_eye[2][1] - positions.right_eye[4][1]) * 7 + 0.9);// cat eyes
 
 
 
